@@ -129,3 +129,51 @@ OcuCheck is a full-stack AI-powered eye disease pre-screening platform designed 
 ```bash
 git clone https://github.com/your-username/ocucheck.git
 cd ocucheck
+cd ocucheck-frontend
+npm install
+NEXT_PUBLIC_STREAM_API_KEY=your_stream_api_key
+STREAM_API_SECRET=your_stream_api_secret
+NEXT_PUBLIC_API_URL=http://localhost:8000
+cd ocucheck-backend
+pip install -r requirements.txt
+ANTHROPIC_API_KEY=your_anthropic_api_key
+STREAM_API_KEY=your_stream_api_key
+STREAM_API_SECRET=your_stream_api_secret
+ocucheck/
+├── screenshots/                        # README screenshots
+│   ├── landing-page.png
+│   ├── landing-page2.png
+│   ├── workspace.png
+│   ├── assessment.png
+│   ├── live-scan1.png
+│   ├── live-scan2.png
+│   ├── uploadimage.png
+│   ├── upload-image2.png
+│   └── upload-image3.png
+│
+├── ocucheck-frontend/
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── (marketing)/            # Landing page
+│   │   │   │   └── page.tsx
+│   │   │   └── (workspace)/            # App workspace
+│   │   │       └── app/
+│   │   │           ├── chat/
+│   │   │           ├── upload/
+│   │   │           ├── live/
+│   │   │           ├── assessment/
+│   │   │           └── history/
+│   │   ├── components/layout/
+│   │   ├── providers/
+│   │   ├── store/
+│   │   └── styles/
+│   │       └── tokens.css
+│   └── tailwind.config.ts
+│
+└── ocucheck-backend/
+    ├── server.py                       # FastAPI entry point
+    ├── nodes.py                        # LangGraph agent nodes
+    ├── protocol_nodes.py               # Clinical protocol handlers
+    ├── model_inference.py              # ML model inference
+    ├── vision_worker.py                # Image processing worker
+    └── config.py                       # Configuration
